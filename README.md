@@ -7,43 +7,33 @@ import vivifyproba.*;
  *
  * @author Gabi
  */
-public class PregledKrvnogPritiska extends Pregled {
-    private int puls;
-    private int gornjaGranica;
-    private int donjaGranica;
-    
-    // hmmm, mislim da su u pitanju celi brojevi, ( 300 sa 200 ) , 85 otkucaja u minutu za puls npr.
+public class PregledHolesterola extends Pregled {
+    private double nivoHolesterola;
+    private GregorianCalendar vremePoslednjeg;
 
+    public PregledHolesterola(GregorianCalendar zaZakazati, Pacijent p, Doktor d) {
+        zakazivanjePregleda(zaZakazati, p, d);
+    }
+
+    
+    
+    
     @Override
     public void zakazivanjePregleda(GregorianCalendar gc, Pacijent p, Doktor d) {
-       this.zakazano = gc;
-       this.p = p;
-       this.d = d;
+        this.zakazano = gc;
     }
-
-    public PregledKrvnogPritiska(GregorianCalendar gc, Pacijent p, Doktor d) {
-        zakazivanjePregleda(gc, p, d);
+    public double getNivo() {
+        return nivoHolesterola;
+    }
+    public void setNivo(double nivo) {
+        this.nivoHolesterola = nivo;
+    }
+    public GregorianCalendar getVremePoslednjeg() {
+        return vremePoslednjeg;
+    }
+    public void setVremePoslednjeg(GregorianCalendar gc) {
+        this.vremePoslednjeg = gc;
     }
     
     
-    
-    
-    public int getPuls() {
-        return puls;
-    }
-    public void setPuls(int puls) {
-        this.puls = puls;
-    }
-    public int getGornju() {
-        return gornjaGranica;
-    }
-    public void setGornju(int gornja) {
-        this.gornjaGranica = gornja;
-    }
-    public int getDonja() {
-        return donjaGranica;
-    }
-    public void setDonja(int donja) {
-        this.donjaGranica = donja;
-    }
 }
